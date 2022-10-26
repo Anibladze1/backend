@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int main() {
@@ -10,11 +9,12 @@ int main() {
   cout << "Enter num1:";
   cin >> num1;
   
+  // Enter operator: +, -, *, /:
+  cout << "Enter operator:";
+  cin >> op;
+  
   cout << "Enter num2:";
   cin >> num2;
-  
-  cout << "Enter operator: +, -, *, /: ";
-  cin >> op;
 
   switch(op) {
 
