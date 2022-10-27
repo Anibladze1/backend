@@ -1,45 +1,46 @@
-#include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
 
-int main() {
 
-  char op;
-  float num1, num2;
 
-  cout << "Enter num1:";
-  cin >> num1;
-  
-  // Enter operator: +, -, *, /:
-  cout << "Enter operator:";
-  cin >> op;
-  
-  cout << "Enter num2:";
-  cin >> num2;
+int main()
+{
+    double total = 0;
+    string s = "";
+    double num= 0;
+    cin >> total;
+    while (true) {
+        cin >> s;
+        if (s == "+") {
+            cin >> num;
+            total = total + num;
+            continue;
+        }
 
-  switch(op) {
+        if (s == "-") {
+            cin >> num;
+            total = total - num;
+            continue;
+        }
 
-    case '+':
-      cout << num1 << " + " << num2 << " = " << num1 + num2;
-      break;
+        if (s == "*") {
+            cin >> num;
+            total = total * num;
+            continue;
+        }
+        if (s == "/") {
+            cin >> num;
+            total = total / num;
+            continue;
+        }
 
-    case '-':
-      cout << num1 << " - " << num2 << " = " << num1 - num2;
-      break;
+        if (s == "exit") {
+            break;
+        }
 
-    case '*':
-      cout << num1 << " * " << num2 << " = " << num1 * num2;
-      break;
+      
+    }
 
-    case '/':
-      cout << num1 << " / " << num2 << " = " << num1 / num2;
-      break;
-
-    default:
-      // If the operator is other than +, -, * or /, error message is shown
-      cout << "Please try again";
-      break;
-  }
-  
-
-  return 0;
+    cout << total; 
 }
