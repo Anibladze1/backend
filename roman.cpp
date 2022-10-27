@@ -56,11 +56,12 @@ int romanToInteger(string roman) {
             last = roman[i];
             
         } else {
+            counter[roman[i]]++;
             if(counter[roman[i]]>3) {
                 cout <<"Incorrect input" << endl;
                 return -1;
             }
-            counter[roman[i]]++;
+            
             if(vals[roman[i]]>vals[last]&&afterValid.find(last)!=afterValid.end()&&count(afterValid[last].begin(),afterValid[last].end(),roman[i])>0) {
                 result+= vals[roman[i]]-2*vals[last];
                 last = roman[i];
@@ -91,7 +92,7 @@ int romanToInteger(string roman) {
 
 int main() {
 
-    cout << romanToInteger("XLIX") << endl;
+    cout << romanToInteger("XIIII") << endl;
 
 
 
