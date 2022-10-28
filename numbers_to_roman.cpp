@@ -1,38 +1,43 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+#include <map>
+#include <utility>
 
 using namespace std;
 
 //This function converts numbers to Roman numbers;
 string numbersToRoman(int input) {
-    
-    string romans[13] = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
-    int numbers[13] = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+
+    map <int, string> Converter ;
+
+    Converter[1] = "I";
+    Converter[4] = "IV";
+    Converter[5] = "V";
+    Converter[9] = "IX";
+    Converter[10] = "X";
+    Converter[40] = "XL";
+    Converter[50] = "L";
+    Converter[90] = "XC";
+    Converter[100] = "C";
+    Converter[400] = "CD";
+    Converter[500] = "D"; 
+    Converter[900] = "CM";
+    Converter[1000] = "M";
     
     string output = "";
-    
-    for (int i = 0; i < 13; i++){
-        while (input >= numbers[i]){
-            output += romans[i];
-            input -= numbers[i];
+    for (auto i = Converter.rbegin(); i != Converter.rend(); i++){
+
+        while (input >= i -> first){
+            output += i -> second;
+            input -= i -> first;
         }
     }
+    
     return output;
 }
 
 
-
-int main()
-{
-    // Just for test
-    int number;
-    string endNumberInRoman;
-    cout << "Enter number: ";
-    cin >> number;
-    endNumberInRoman = numbersToRoman(number);
-    cout << "This is end number in roman: " << endNumberInRoman << endl;
-
-    return 0;
+int main (){
+    cout << numbersToRoman(169) << endl;
 }
-
