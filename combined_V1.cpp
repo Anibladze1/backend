@@ -172,7 +172,7 @@ int main (){
 
     // საბოლოო რიცხვი რომაულ ფორმატში
     string resultInRomanNumbers;
-    result = numbersToRoman(calculator());
+    resultInRomanNumbers = numbersToRoman(calculator());
 
     cout << resultInRomanNumbers << endl;
 }
