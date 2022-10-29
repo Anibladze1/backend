@@ -165,10 +165,7 @@ string calculator (){
         } 
         
         else if (operand == "-"){
-            if(romanToInteger(romanNumber)>=result) {
-                cout << "Result should be more than zero" << endl;
-                return "Error";
-            }
+            
             result=result - romanToInteger(romanNumber);
             }
             
@@ -177,10 +174,7 @@ string calculator (){
             }
             
         else if (operand == "/") {
-                if(romanToInteger(romanNumber)>result) {
-                    cout << "result should be more than zero" << endl;
-                    return "Error";
-                }
+                
                 result=result/romanToInteger(romanNumber);
             }
 
