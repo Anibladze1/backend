@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <utility>
 
 using namespace std;
 
@@ -26,6 +25,12 @@ string numbersToRoman(int input) {
     Converter[1000] = "M";
     
     string output = "";
+
+    if (input < 0){
+        input = abs(input);
+        cout << "-";
+
+    } 
     for (auto i = Converter.rbegin(); i != Converter.rend(); i++){
 
         while (input >= i -> first){
@@ -39,5 +44,5 @@ string numbersToRoman(int input) {
 
 
 int main (){
-    cout << numbersToRoman(169) << endl;
+    cout << numbersToRoman(-169) << endl;
 }
