@@ -165,7 +165,7 @@ string calculator (){
         } 
         
         else if (operand == "-"){
-            if(romanToInteger(romanNumber)>result) {
+            if(romanToInteger(romanNumber)>=result) {
                 cout << "Result should be more than zero" << endl;
                 return "Error";
             }
