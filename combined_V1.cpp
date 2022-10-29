@@ -39,6 +39,7 @@ int romanToInteger(string roman) {
 
     char last = roman[0];
     result+=vals[last];
+    counter[roman[0]] = 1;
     if(vals.find(roman[0])==vals.end()) {
         return -1;
     }
@@ -193,6 +194,6 @@ string calculator (){
 int main (){
 
     // საბოლოო რიცხვი რომაულ ფორმატში
-    cout << calculator() << endl;
+    cout << romanToInteger("IIII");
    
 }
